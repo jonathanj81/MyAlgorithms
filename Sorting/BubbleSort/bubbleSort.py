@@ -4,7 +4,6 @@ import timeit as T
 def bubbleSort(A):
 
     for i in range(len(A)-1,0,-1):
-        print ' -- '
         swapped = False
 
         for j in range(i):
