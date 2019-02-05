@@ -1,5 +1,6 @@
 from BubbleSort.bubbleSort import bubbleSort as B
 from SelectionSort.selectionSort import selectionSort as S
+from InsertionSort.insertionSort import insertionSort as I
 import timeit as T
 
 bigList = []
@@ -11,6 +12,12 @@ def wrapper(func, *args, **kwargs):
     def wrapped():
         return func(*args, **kwargs)
     return wrapped
+
+wrapped = wrapper(I,bigList)
+
+print 'insertion'
+print T.timeit(wrapped,number=1)
+print '---------'
 
 wrapped = wrapper(S,bigList)
 
