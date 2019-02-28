@@ -1,6 +1,7 @@
 from BubbleSort.bubbleSort import bubbleSort as B
 from SelectionSort.selectionSort import selectionSort as S
 from InsertionSort.insertionSort import insertionSort as I
+from MergeSort.mergeSort import mergeSort as M
 import timeit as T
 
 bigList = []
@@ -21,39 +22,21 @@ def wrapper(func, *args, **kwargs):
         return func(*args, **kwargs)
     return wrapped
 
-wrapped = wrapper(I,smallList)
 
-print 'insertion - smallList'
+wrapped = wrapper(M,smallList)
+
+print 'merge - smallList'
 print T.timeit(wrapped,number=1)
 print '---------'
 
-wrapped = wrapper(S,smallList)
+wrapped = wrapper(M,mediumList)
 
-print 'selection - smallList'
+print 'merge - mediumList'
 print T.timeit(wrapped,number=1)
 print '---------'
 
-wrapped = wrapper(B,smallList)
+wrapped = wrapper(M,bigList)
 
-print 'bubble - smallList'
-print T.timeit(wrapped,number=1)
-print '---------'
-
-
-wrapped = wrapper(I,mediumList)
-
-print 'insertion - mediumList'
-print T.timeit(wrapped,number=1)
-print '---------'
-
-wrapped = wrapper(S,mediumList)
-
-print 'selection - mediumList'
-print T.timeit(wrapped,number=1)
-print '---------'
-
-wrapped = wrapper(B,mediumList)
-
-print 'bubble - mediumList'
+print 'merge - bigList'
 print T.timeit(wrapped,number=1)
 print '---------'
