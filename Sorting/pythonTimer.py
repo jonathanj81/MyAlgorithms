@@ -10,13 +10,13 @@ mediumList = []
 smallList = []
 
 with open ('bigListOfInts.txt', 'rb') as f:
-    bigList = f.readlines()
+    bigList = map(int, f.readlines())
     
 with open ('mediumListOfInts.txt', 'rb') as f:
-    mediumList = f.readlines()
+    mediumList = map(int,f.readlines())
     
 with open ('smallListOfInts.txt', 'rb') as f:
-    smallList = f.readlines()
+    smallList = map(int, f.readlines())
 
 def wrapper(func, *args, **kwargs):
     def wrapped():
@@ -24,20 +24,21 @@ def wrapper(func, *args, **kwargs):
     return wrapped
 
 
-wrapped = wrapper(Q,smallList)
+'''wrapped = wrapper(S,smallList)
 
-print 'quicksort - smallList'
+print 'selectionsort - smallList'
 print T.timeit(wrapped,number=1)
 print '---------'
 
-wrapped = wrapper(Q,mediumList)
+wrapped = wrapper(S,mediumList)
 
-print 'quicksort - mediumList'
+print 'selectionsort - mediumList'
 print T.timeit(wrapped,number=1)
 print '---------'
+'''
 
-wrapped = wrapper(Q,bigList)
+wrapped = wrapper(B,bigList)
 
-print 'quicksort - bigList'
+print 'bubblesort - bigList'
 print T.timeit(wrapped,number=1)
 print '---------'
