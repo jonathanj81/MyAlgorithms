@@ -3,6 +3,7 @@ from SelectionSort.selectionSort import selectionSort as S
 from InsertionSort.insertionSort import insertionSort as I
 from MergeSort.mergeSort import mergeSort as M
 from QuickSort.quickSort import quickSort as Q
+from HeapSort.heapSort import heapSort as H
 import timeit as T
 
 bigList = []
@@ -24,21 +25,20 @@ def wrapper(func, *args, **kwargs):
     return wrapped
 
 
-'''wrapped = wrapper(S,smallList)
+wrapped = wrapper(H,smallList)
 
-print 'selectionsort - smallList'
+print 'heapsort - smallList'
 print T.timeit(wrapped,number=1)
 print '---------'
 
-wrapped = wrapper(S,mediumList)
+wrapped = wrapper(H,mediumList)
 
-print 'selectionsort - mediumList'
+print 'heapsort - mediumList'
 print T.timeit(wrapped,number=1)
 print '---------'
-'''
 
-wrapped = wrapper(B,bigList)
+wrapped = wrapper(H,bigList)
 
-print 'bubblesort - bigList'
+print 'heapsort - bigList'
 print T.timeit(wrapped,number=1)
 print '---------'
